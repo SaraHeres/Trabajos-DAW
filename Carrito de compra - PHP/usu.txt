@@ -1,0 +1,23 @@
+# Privilegios para `access`@`localhost`
+
+GRANT USAGE ON *.* TO 'access'@'localhost';
+
+GRANT SELECT, INSERT ON `carrito`.`usuarios` TO 'access'@'localhost';
+
+
+# Privilegios para `cliente`@`%`
+
+GRANT USAGE ON *.* TO 'cliente'@'%';
+
+GRANT SELECT ON `carrito`.`articulo` TO 'cliente'@'%';
+
+GRANT SELECT, INSERT ON `carrito`.`compras` TO 'cliente'@'%';
+
+
+# Privilegios para `gestor`@`%`
+
+GRANT USAGE ON *.* TO 'gestor'@'%';
+
+GRANT SELECT ON `carrito`.`compras` TO 'gestor'@'%';
+
+GRANT SELECT, INSERT, UPDATE ON `carrito`.`articulo` TO 'gestor'@'%';
